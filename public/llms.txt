@@ -1,0 +1,20 @@
+# Espai Trafalgar
+
+> Espai Trafalgar és un futur espai cooperatiu de 1.400 metres quadrats al carrer de Trafalgar, 12, de Barcelona, impulsat per quatre cooperatives de l'economia social i solidària: Arç Cooperativa, Som Connexió, Sostre Cívic i Crític. El local és en obres des del febrer del 2026 i l'obertura és prevista per a la primera meitat del 2027.
+
+Aquest web és una sola pàgina en català amb la presentació del projecte, les quatre cooperatives impulsores, els motius de la compra conjunta, el programa arquitectònic i el calendari de les obres. No hi ha formularis, ni botiga, ni àrea privada, i no s'hi publiquen continguts nous de manera periòdica. Espai Trafalgar és un nom provisional que les quatre cooperatives han de substituir per un nom definitiu.
+
+## Pàgines
+
+- [Espai Trafalgar](https://espaitrafalgar.coop/): la pàgina única del projecte, amb el que és l'espai, qui l'impulsa, per què es fa, com serà i quan obre.
+
+## Cooperatives impulsores
+
+- [Arç Cooperativa](https://arc.coop/): corredoria d'assegurances ètiques fundada el 1983, especialitzada en economia social i solidària, món associatiu i energies renovables.
+- [Som Connexió](https://somconnexio.coop/): cooperativa de consum de telecomunicacions amb serveis de telefonia mòbil i Internet.
+- [Sostre Cívic](https://sostrecivic.coop/): cooperativa d'habitatge cooperatiu en cessió d'ús.
+- [Crític](https://www.elcritic.cat/): cooperativa de periodistes que publica un mitjà d'investigació i anàlisi.
+
+## Optional
+
+- [Grup Ecos](https://grupecos.coop/): el grup cooperatiu del qual són sòcies les quatre entitats impulsores.

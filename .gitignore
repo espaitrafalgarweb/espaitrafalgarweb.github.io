@@ -1,0 +1,8 @@
+node_modules/
+dist/
+previews/
+source-assets/
+.DS_Store
+
+# Notes de construcció: acompanyen el projecte, no es publiquen.
+NOTES-DE-CONSTRUCCIO.md

@@ -1,0 +1,7 @@
+# Espai Trafalgar, espaitrafalgar.coop
+# Si trobeu una vulnerabilitat en aquest web, escriviu a l'adreça de contacte.
+
+Contact: mailto:info@elcritic.cat
+Expires: 2027-10-10T22:00:00.000Z
+Preferred-Languages: ca, es, en
+Canonical: https://espaitrafalgar.coop/.well-known/security.txt

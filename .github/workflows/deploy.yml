@@ -1,0 +1,60 @@
+name: Desplega a GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Configura Pages
+        id: pages
+        uses: actions/configure-pages@v6
+
+      - run: npm ci
+
+      # base_path val cadena buida en una pàgina d'organització o amb domini
+      # propi, i /nom-del-repositori en una pàgina de projecte. La normalització
+      # evita que surti "//" quan ve buit o acabat amb barra.
+      - name: Compila
+        env:
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: |
+          BASE="$BASE_PATH"
+          [ -z "$BASE" ] && BASE="/"
+          case "$BASE" in */) ;; *) BASE="$BASE/" ;; esac
+          npm run build -- --base="$BASE"
+
+      # Sense include-hidden-files, l'artefacte no porta .well-known/security.txt.
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+          include-hidden-files: true
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

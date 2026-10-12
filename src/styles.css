@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* Archivo i Newsreader, subconjunt latin, servides des del mateix domini.
+   El rang U+0000-00FF ja porta à è é í ï ò ó ú ü ç en majúscula i en
+   minúscula i el punt volat U+00B7 de l'ela geminada, de manera que el
+   català no necessita el subconjunt latin-ext. */
+@font-face {
+    font-family: "Archivo Variable";
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url("/fonts/archivo-latin-wght-normal.woff2") format("woff2-variations");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+        U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: "Newsreader Variable";
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url("/fonts/newsreader-latin-wght-normal.woff2") format("woff2-variations");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+        U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@theme {
+    --color-paper: #faf6f0;
+    --color-paper-soft: #f2eadf;
+    --color-sand: #e8dbc8;
+    --color-ink: #1a1714;
+    --color-ink-soft: #4a443c;
+    --color-terracota: #8e2f17;
+    --color-oliva: #2f4a3c;
+
+    /* Color majoritari del web de cada cooperativa, mesurat el 12 d'octubre
+       del 2026 amb la superficie real que ocupa cada color a la portada,
+       sense comptar blancs, negres i grisos. Nomes s'usen com a filet
+       vertical, mai com a text: el verd d'Arc es queda a 3,13:1 sobre el
+       paper i no arriba al minim de 4,5:1 que demana el text. */
+    --color-brand-arc: #5d987a;
+    --color-brand-somconnexio: #ce1462;
+    --color-brand-sostrecivic: #e83f43;
+    --color-brand-critic: #4a2244;
+
+    --font-display: "Archivo Variable", system-ui, sans-serif;
+    --font-body: "Newsreader Variable", Georgia, "Times New Roman", serif;
+
+    /* Newsreader te l'alcada de x a 441 sobre 1000, un 13 % menys que
+       Literata, de manera que el cos puja de 19 a 21 pixels perque la
+       mida aparent del text sigui la mateixa. */
+    --text-base: 1.3125rem;
+    --text-base--line-height: 1.6;
+    --text-lead: 1.4375rem;
+    --text-lead--line-height: 1.5;
+}
+
+@layer base {
+    html {
+        scroll-padding-top: 2rem;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        font-family: var(--font-body);
+        font-size: var(--text-base);
+        line-height: var(--text-base--line-height);
+        background-color: var(--color-paper);
+        color: var(--color-ink);
+        text-rendering: optimizeLegibility;
+    }
+
+    :focus-visible {
+        outline: 3px solid var(--color-terracota);
+        outline-offset: 3px;
+    }
+
+    footer :focus-visible {
+        outline-color: var(--color-paper);
+    }
+
+    ::selection {
+        background-color: var(--color-sand);
+        color: var(--color-ink);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            scroll-behavior: smooth;
+        }
+    }
+}
+
+@layer components {
+    .link {
+        color: var(--color-terracota);
+        text-decoration-line: underline;
+        text-underline-offset: 0.2em;
+        text-decoration-thickness: 1px;
+    }
+
+    .link:hover {
+        color: var(--color-ink);
+        text-decoration-thickness: 2px;
+    }
+
+    .link-inverse {
+        color: var(--color-paper);
+        text-decoration-line: underline;
+        text-underline-offset: 0.2em;
+        text-decoration-thickness: 1px;
+    }
+
+    .link-inverse:hover {
+        text-decoration-thickness: 2px;
+    }
+}
